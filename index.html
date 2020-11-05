@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世界地图-中国带省份下钻</title>
+    <script src='./js/vue.js'></script>
+    <script src='./js/echarts.min.js'></script>
+    <script src='./js/axios.min.js'></script>
+</head>
+<body style='background: url(./bg.png) no-repeat;'>
+    <div id ='app'>
+        <div style='background: url(./bg-map.png) no-repeat;'>
+            <!-- 地图容器 -->
+            <div id='worldMap' style='width:812px;height:590px'></div>
+        </div>
+        <button @click='back'>返回按钮</button>
+    </div>
+    <script src='./js/china-main-city-map.js'></script>
+    <script src='./js/worldMapName.js'></script>
+    <script src='./js/index.js'></script>
+</body>
+</html>
