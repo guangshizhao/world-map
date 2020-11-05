@@ -14,7 +14,7 @@
             <!-- 地图容器 -->
             <div id='worldMap' style='width:812px;height:590px'></div>
         </div>
-        <button @click='back'>返回按钮</button>
+        <button v-show='mapHistory.length' @click='back'>返回按钮</button>
     </div>
     <script src='./js/china-main-city-map.js'></script>
     <script src='./js/worldMapName.js'></script>

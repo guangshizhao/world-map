@@ -5,12 +5,12 @@ new Vue({
     },
     created(){
         this.getWorldJson()
+        this.mapHistory.push()
     },
     mounted(){},
     methods:{
         async getWorldJson(){
             let {data:WorldMapJson} = await axios.get('../map-json/word-china.json')
-         
             this.worldMap('worldMap','china',WorldMapJson,6,[104, 35])
         },
         /**
@@ -126,24 +126,27 @@ new Vue({
             myChart.setOption(option, true);
             // 监听地图的点击事件
             myChart.on('click', async (mdata)=> {
-                console.log(mdata)
                 let cityName = "";
-                // console.log(mdata)
                 // console.log(cityMap)
                 var cityMapKey = Object.keys(cityMap)
                 // 检查点击的地图区域是不是中国的如果不是就return
                 var flag = cityMapKey.some(item=>item == mdata.name)
                 if(!flag) return;
-
                 this.mapHistory.push(mdata.name)
                 cityName = mdata.name
-
                 let { data:cityMapJson } = await axios.get(`../map-json/city-map/${cityMap[cityName]}.json`)
                 this.worldMap('worldMap','city',cityMapJson,null,null)
             })
         },
-        back(){
-
+       async back(){
+            this.mapHistory.pop()
+           if(this.mapHistory.length < 1){
+                this.getWorldJson()
+           }else{
+                let historyCityName = this.mapHistory[this.mapHistory.length -1]
+                let { data:cityMapJson } = await axios.get(`../map-json/city-map/${cityMap[historyCityName]}.json`)
+                this.worldMap('worldMap','city',cityMapJson,null,null)
+           }
         }
     },
 })
