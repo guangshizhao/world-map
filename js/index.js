@@ -10,7 +10,8 @@ new Vue({
     mounted(){},
     methods:{
         async getWorldJson(){
-            let {data:WorldMapJson} = await axios.get('../map-json/word-china.json')
+            // let {data:WorldMapJson} = await axios.get('../map-json/word-china.json')
+            let {data:WorldMapJson} = await axios.get('/world-map/map-json/word-china.json')
             this.worldMap('worldMap','china',WorldMapJson,6,[104, 35])
         },
         /**
@@ -134,7 +135,8 @@ new Vue({
                 if(!flag) return;
                 this.mapHistory.push(mdata.name)
                 cityName = mdata.name
-                let { data:cityMapJson } = await axios.get(`../map-json/city-map/${cityMap[cityName]}.json`)
+                // let { data:cityMapJson } = await axios.get(`../map-json/city-map/${cityMap[cityName]}.json`)
+                let { data:cityMapJson } = await axios.get(`/world-map/map-json/city-map/${cityMap[cityName]}.json`)
                 this.worldMap('worldMap','city',cityMapJson,null,null)
             })
         },
@@ -144,7 +146,8 @@ new Vue({
                 this.getWorldJson()
            }else{
                 let historyCityName = this.mapHistory[this.mapHistory.length -1]
-                let { data:cityMapJson } = await axios.get(`../map-json/city-map/${cityMap[historyCityName]}.json`)
+                // let { data:cityMapJson } = await axios.get(`../map-json/city-map/${cityMap[historyCityName]}.json`)
+                let { data:cityMapJson } = await axios.get(`/world-map/map-json/city-map/${cityMap[historyCityName]}.json`)
                 this.worldMap('worldMap','city',cityMapJson,null,null)
            }
         }
