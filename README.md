@@ -20,6 +20,8 @@
 
 ![输入图片说明](https://images.gitee.com/uploads/images/2020/1105/144949_949e7e0c_4886126.png "屏幕截图.png")
 
+在线预览: [https://guangshizhao.github.io/world-map/](https://guangshizhao.github.io/world-map/) 
+
 qq: 45664741 注明来意
 
 小站 :[www.flot.top](http://www.flot.top)
