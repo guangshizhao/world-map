@@ -13,7 +13,7 @@
 
 #### 点击返回按钮可以返回到上一级
 
-## 由于用了 axios 请求json文件 大家克隆下来的时候记得放到服务器预览,
+## 由于用了 axios 请求json文件 大家克隆下来的时候记得放到服务器预览(注意请求json文件的路径),
 
 
 >没有服务器可以用webstrom 打开,也可以用 vscode 的 live Server 插件去运行
@@ -25,3 +25,7 @@
 qq: 45664741 注明来意
 
 小站 :[www.flot.top](http://www.flot.top)
+
+如果github服务器抽风代码下载不下来,可以去码云 [https://gitee.com/zhaoshiguang/world-map.git
+](https://gitee.com/zhaoshiguang/world-map.git
+) 
