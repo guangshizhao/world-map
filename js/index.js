@@ -25,7 +25,7 @@ new Vue({
             //初始化echarts实例
             var myChart = echarts.init(document.getElementById(domId));
             //注册地图
-            echarts.registerMap(mapName, mapJson);  // mapName 如果不是chinaname南海诸岛不会显示
+            echarts.registerMap(mapName, mapJson);  // mapName 如果不是china南海诸岛不会显示
             myChart.off('click') // 解绑事件处理函数。为了解决地图下钻会重复触发点击事件的问题
            // 单独给中国的省份加上渐变背景
             // 单独给中国的省份设置label颜色或者区域颜色
